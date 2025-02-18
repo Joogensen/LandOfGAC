@@ -69,7 +69,7 @@ public class GackWorld extends World {
 		computerLab.gain(new Scroll("Unix Programmers Manual"));
 		computerLab.gain(new Scroll("NeXT User's Reference"));
 		
-		// Add new scrool that will be found in Lund
+		// Add new scroll that will be found in Lund
 		lund.gain(new Scroll("Louis is awesome Scroll"));
 		
 		setPlayer(new Person("player", dormitory));
