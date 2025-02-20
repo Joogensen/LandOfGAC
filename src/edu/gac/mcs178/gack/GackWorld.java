@@ -52,7 +52,7 @@ public class GackWorld extends World {
 		
 		
 		
-		new AutoPerson("Max", offices, 2);
+		new AutoPerson("Max", dormitory, 2);
 		new AutoPerson("Karl", computerLab, 4);
 		new Witch("Barbara", offices, 3, pond);
 		
@@ -61,7 +61,7 @@ public class GackWorld extends World {
 		
 		new Wizard("Elvee", offices, 1, chamberOfWizards);
 		
-		dormitory.gain(new Thing("late lab report"));
+		dormitory.gain(new Scroll("Late Lab Report"));
 		
 		lounge.gain(new Thing("Karl's glasses"));
 		
