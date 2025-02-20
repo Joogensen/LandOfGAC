@@ -32,6 +32,7 @@ public class GraphicalUserInterface extends JFrame implements MessageDisplay {
 	private JTextArea textArea;
 	private JComboBox goJComboBox;
 	private JComboBox takeJComboBox;
+	private JComboBox eatJComboBox;
 	private JComboBox dropJComboBox;
 	private JComboBox readJComboBox;
 	private JComboBox giveJComboBox;
@@ -40,6 +41,7 @@ public class GraphicalUserInterface extends JFrame implements MessageDisplay {
 	private DropActionListener dropActionListener;
 	private ReadActionListener readActionListener;
 	private GiveActionListener giveActionListener;
+	private EatActionListener eatActionListener;
 	
 	public GraphicalUserInterface(Person player) {
 		super();
@@ -58,7 +60,7 @@ public class GraphicalUserInterface extends JFrame implements MessageDisplay {
 		add(textScrollPane, BorderLayout.CENTER);
 		
 		// controlPanel contains all of the controls for the game
-		JPanel controlPanel = new JPanel(new GridLayout(3, 3));
+		JPanel controlPanel = new JPanel(new GridLayout(4, 3));
 		add(controlPanel, BorderLayout.NORTH);
 		
 		// Look around button
@@ -87,6 +89,9 @@ public class GraphicalUserInterface extends JFrame implements MessageDisplay {
 		paceSlider.addChangeListener(paceSliderListener);
 		controlPanel.add(paceSlider);
 		
+		
+		
+		
 		// Take combo box
 		
 		takeJComboBox = new JComboBox();
@@ -107,18 +112,22 @@ public class GraphicalUserInterface extends JFrame implements MessageDisplay {
 		goJComboBox.addActionListener(goActionListener);
 		controlPanel.add(goJComboBox);
 		
+		
 		// Give combo box
 		
 		giveJComboBox = new JComboBox();
 		giveActionListener = new GiveActionListener(this, player, giveJComboBox);
 		giveJComboBox.addActionListener(giveActionListener);
 		controlPanel.add(giveJComboBox);
+		
 
 		// Change player's name button
 		
 		JButton changeNameButton = new JButton("Change player's name");
 		changeNameButton.addActionListener(new ChangePlayersNameActionListener(this, player));
 		controlPanel.add(changeNameButton);
+		
+		
 
 		// Read combo box
 		
@@ -126,6 +135,7 @@ public class GraphicalUserInterface extends JFrame implements MessageDisplay {
 		readActionListener = new ReadActionListener(this, player, readJComboBox);
 		readJComboBox.addActionListener(readActionListener);
 		controlPanel.add(readJComboBox);
+		
 
 		// Drop combo box
 		
@@ -133,7 +143,18 @@ public class GraphicalUserInterface extends JFrame implements MessageDisplay {
 		dropActionListener = new DropActionListener(this, player, dropJComboBox);
 		dropJComboBox.addActionListener(dropActionListener);
 		controlPanel.add(dropJComboBox);
+		
+		//TESTING eat button
+		
+		eatJComboBox = new JComboBox();
+		eatActionListener = new EatActionListener(this, player, eatJComboBox);
+		eatJComboBox.addActionListener(eatActionListener);
+		controlPanel.add(eatJComboBox);
+		
+		
 	}
+	
+	
 	
 	public void playTurn() {
 		AutoPerson.getRegistry().trigger(pace);

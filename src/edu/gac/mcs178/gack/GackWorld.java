@@ -63,6 +63,8 @@ public class GackWorld extends World {
 		
 		dormitory.gain(new Scroll("Late Lab Report"));
 		
+		dormitory.gain(new Thing("Chocolate"));
+		
 		lounge.gain(new Thing("Karl's glasses"));
 		
 		library.gain(new Scroll("Scroll of Enlightenment"));
