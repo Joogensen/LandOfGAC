@@ -66,6 +66,14 @@ public class Person {
 		}
 	}
 	
+	public void eat(Food food) {
+		if ((food.isOwned()) && (food.getOwner().equals(this))) {
+			food.beEaten();
+		} else {
+			Utility.displayMessage(this + " does not have " + food);
+		}
+	}
+	
 	public void haveFit() {
 		say("Yaaaah! I am upset");
 	}
