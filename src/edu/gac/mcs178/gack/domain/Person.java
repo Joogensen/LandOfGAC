@@ -15,6 +15,7 @@ public class Person {
 	public void setName(String name) { this.name = name; }
 	public Place getPlace() { return place; }
 	public List<Thing> getPossessions() { return possessions; }
+	
 
 	public Person(String name, Place place) {
 		super();
@@ -74,6 +75,10 @@ public class Person {
 		}
 	}
 	
+	
+	
+	
+	
 	public void haveFit() {
 		say("Yaaaah! I am upset");
 	}
@@ -125,6 +130,8 @@ public class Person {
 			this.say("Here, take this " + thing + recipient);
 		}
 	}
+	
+
 	
 	public void lose(Thing thing) {
 		if (!equals(thing.getOwner())) {
