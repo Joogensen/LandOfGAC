@@ -32,10 +32,11 @@ public class EatActionListener implements ActionListener {
 			eatJComboBox.addItem(foods);
 		}
 	}
-	
+				
 	public void setEnabled(boolean b) {
 		enabled = b;
 	}
+	
 	
 	public void updateJComboBox() {
 		eatJComboBox.removeAllItems();
