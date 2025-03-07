@@ -18,6 +18,7 @@ public class Food extends Thing {
 			Utility.displayMessage("No one has " + getName());
 		} else {
 			owner.say("I have eaten " + getName());
+			
 		}
 	}
 	

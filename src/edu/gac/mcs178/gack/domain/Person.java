@@ -70,6 +70,9 @@ public class Person {
 	public void eat(Food food) {
 		if ((food.isOwned()) && (food.getOwner().equals(this))) {
 			food.beEaten();
+			food.becomeUnowned();
+			possessions.remove(food);
+			place.lose(food);
 		} else {
 			Utility.displayMessage(this + " does not have " + food);
 		}
