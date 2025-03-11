@@ -119,7 +119,10 @@ public class Person {
 			thing.setOwner(this);
 			possessions.add(thing);
 			say("I take " + thing);
+			
+			
 		}
+		
 	}
 	
 	public void give(Thing thing, Person recipient) {
@@ -130,7 +133,7 @@ public class Person {
 			this.possessions.remove(thing);
 			recipient.possessions.add(thing);
 			thing.setOwner(recipient);
-			this.say("Here, take this " + thing + recipient);
+			this.say("Here, take this " + thing + " " + recipient);
 		}
 	}
 	

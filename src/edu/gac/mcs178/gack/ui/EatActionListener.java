@@ -32,6 +32,7 @@ public class EatActionListener implements ActionListener {
 			eatJComboBox.addItem(food);
 			
 		}
+		updateJComboBox();
 	}
 				
 	public void setEnabled(boolean b) {
@@ -51,10 +52,11 @@ public class EatActionListener implements ActionListener {
 	public void actionPerformed(ActionEvent e) {
 		if (enabled) {
 			Food item = (Food) eatJComboBox.getSelectedItem();
-			if (!item.getName().equals(INTSRUCTIONS.getName())) {
+			if (item != null && !item.getName().equals(INTSRUCTIONS.getName())) {
 				gui.displayMessage("\n>>> Eat " + item);
 				player.eat(item);
 				gui.playTurn();
+				//updateJComboBox(); 
 				eatJComboBox.setSelectedIndex(0);
 			}
 		}
