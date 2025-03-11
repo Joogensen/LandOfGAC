@@ -167,6 +167,7 @@ public class GraphicalUserInterface extends JFrame implements MessageDisplay {
 		takeActionListener.updateJComboBox();
 		dropActionListener.updateJComboBox();
 		readActionListener.updateJComboBox();
+		eatActionListener.updateJComboBox();
 		giveActionListener.updateJComboBox();
 		enableJComboListeners(true);
 	}

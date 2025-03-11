@@ -15,6 +15,7 @@ public class Person {
 	public void setName(String name) { this.name = name; }
 	public Place getPlace() { return place; }
 	public List<Thing> getPossessions() { return possessions; }
+	
 
 	public Person(String name, Place place) {
 		super();
@@ -69,10 +70,17 @@ public class Person {
 	public void eat(Food food) {
 		if ((food.isOwned()) && (food.getOwner().equals(this))) {
 			food.beEaten();
+			food.becomeUnowned();
+			possessions.remove(food);
+			place.lose(food);
 		} else {
 			Utility.displayMessage(this + " does not have " + food);
 		}
 	}
+	
+	
+	
+	
 	
 	public void haveFit() {
 		say("Yaaaah! I am upset");
@@ -111,7 +119,10 @@ public class Person {
 			thing.setOwner(this);
 			possessions.add(thing);
 			say("I take " + thing);
+			
+			
 		}
+		
 	}
 	
 	public void give(Thing thing, Person recipient) {
@@ -122,9 +133,11 @@ public class Person {
 			this.possessions.remove(thing);
 			recipient.possessions.add(thing);
 			thing.setOwner(recipient);
-			this.say("Here, take this " + thing + recipient);
+			this.say("Here, take this " + thing + " " + recipient);
 		}
 	}
+	
+
 	
 	public void lose(Thing thing) {
 		if (!equals(thing.getOwner())) {
