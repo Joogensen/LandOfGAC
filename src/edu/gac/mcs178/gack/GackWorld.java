@@ -1,6 +1,7 @@
 package edu.gac.mcs178.gack;
 
 import edu.gac.mcs178.gack.domain.AutoPerson;
+import edu.gac.mcs178.gack.domain.Food;
 import edu.gac.mcs178.gack.domain.Person;
 import edu.gac.mcs178.gack.domain.Place;
 import edu.gac.mcs178.gack.domain.Scroll;
@@ -62,6 +63,8 @@ public class GackWorld extends World {
 		new Wizard("Elvee", offices, 1, chamberOfWizards);
 		
 		dormitory.gain(new Scroll("Late Lab Report"));
+		
+		foodService.gain(new Food("Chocolate"));
 		
 		lounge.gain(new Thing("Karl's glasses"));
 		

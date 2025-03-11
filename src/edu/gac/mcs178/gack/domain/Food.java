@@ -6,28 +6,32 @@ import java.util.List;
 
 import edu.gac.mcs178.gack.Utility;
 
-public class Scroll extends Thing {
+public class Food extends Thing {
 	
-	public Scroll(String title) {
+	public Food(String title) {
 		super(title);
 	}
 
-	public void beRead() {
+	public void beEaten() {
 		Person owner = getOwner();
 		if (owner == null) {
 			Utility.displayMessage("No one has " + getName());
 		} else {
-			owner.say("I have read " + getName());
+			owner.say("I have eaten " + getName());
+			
 		}
 	}
 	
-	public static List<Scroll> scrollsIn(Place place) {
-		ArrayList<Scroll> scrollsIn = new ArrayList<Scroll>();
+	public static List<Food> foodIn(Place place) {
+		ArrayList<Food> foodIn = new ArrayList<Food>();
 		for (Thing thing : place.getContents()) {
-			if (thing instanceof Scroll) {
-				scrollsIn.add((Scroll) thing);
+			if (thing instanceof Food) {
+				foodIn.add((Food) thing);
 			}
 		}
-		return scrollsIn;
+		return foodIn;
 	}
+	
+	
+	
 }
